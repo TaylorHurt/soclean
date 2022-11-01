@@ -1,4 +1,4 @@
-### https://www.markdownguide.org/cheat-sheet# SOCLEAN SITE
+### https://www.markdownguide.org/cheat-sheet
 ### https://github.com/ahuimanu/CIDM6325#guide-to-book-topics-for-final-project-baseline-good-better-best
 
 # SOCLEAN SITE
@@ -29,7 +29,7 @@ heroku
 
 
 
-Topic                                   | Baseline  | Good  | Better  | Best
+Topic                                   | Baseline  | Good  | Better  | Best 
 ---                                     | ---       | ---   | ---     | ---
 ***Chapter 3***                         |           |       |         |
 Templates                               | X         |       |         |
