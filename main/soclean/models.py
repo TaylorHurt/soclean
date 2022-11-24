@@ -3,7 +3,10 @@ from django.urls import reverse
 
 
 class Schedule (models.Model):
-    name = models.CharField(max_length=200, )
+    name = models.CharField(max_length=50)
+    state = models.CharField(default='Texas', max_length=10)
+    town = models.CharField(default='Amarillo', max_length=50)
+    street = models.CharField(default="", max_length=50)
     date = models.DateField()
     time = models.TimeField()
 
