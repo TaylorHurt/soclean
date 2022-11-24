@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.views.generic import ListView
+from .models import Schedule
 
-# Create your views here.
+
+class HomePageView(ListView):
+    model = Schedule
+    template_name = "home.html"

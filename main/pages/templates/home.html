@@ -2,5 +2,12 @@
 {% extends "base.html" %}
 
 {% block content %} 
-<h1>Homepage</h1>
+<h1>Scheduled Visits</h1>
+<ul>
+    {% for visit in schedule_list%}
+        <li>{{visit.name}}</li>
+        <li>{{visit.date}}</li>
+        <li>{{visit.time}}</li>
+    {% endfor %}
+</ul>
 {% endblock content %}
