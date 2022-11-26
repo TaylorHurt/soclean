@@ -1,5 +1,5 @@
 from django.db import models
-from django.urls import reverse
+from django.contrib.auth.models import AbstractUser
 
 
 class Schedule (models.Model):
@@ -12,3 +12,4 @@ class Schedule (models.Model):
 
     def __str__(self):  # new
         return self.name[:50]
+

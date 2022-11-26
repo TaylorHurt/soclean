@@ -43,7 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "pages.apps.PagesConfig",  # new
-    'soclean.apps.SocleanConfig'
+    'soclean.apps.SocleanConfig',  # new
+    'accounts.apps.AccountsConfig',  # new
+    "crispy_forms",  # new
+    "crispy_bootstrap5",  # new
 ]
 
 MIDDLEWARE = [
@@ -123,6 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]  # new
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -130,3 +134,11 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = "home"  # new
 LOGOUT_REDIRECT_URL = "home"  # new
+
+AUTH_USER_MODEL = "accounts.CustomUser"  # new
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"  # new
+CRISPY_TEMPLATE_PACK = "bootstrap5"  # new
+
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"  # new

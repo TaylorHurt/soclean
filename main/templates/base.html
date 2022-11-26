@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+  <title>{% block title %}Soclean App{% endblock title %}</title>
+  <meta name="viewport" content="width=device-width,
+  initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <header class="p-3 mb-3 border-bottom">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center
+          justify-content-lg-start">
+          <a class="navbar-brand" href="{% url 'home' %}">Soclean</a>
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center
+            mb-md-0">
+          {% if user.is_authenticated %}
+            <li><a href="#" class="nav-link px-2 link-dark">+ New</a></li>
+          </ul>
+          <div class="dropdown text-end">
+            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle"
+              id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ user.username }}
+            </a>
+            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+              <li><a class="dropdown-item" href="{% url 'password_change'%}">
+                Change password</a></li>
+              <li><a class="dropdown-item" href="{% url 'logout' %}">Log Out</a></li>
+            </ul>
+          </div>
+          {% else %}
+          </ul>
+          <div class="text-end">
+            <a href="{% url 'login' %}" class="btn btn-outline-primary me-2">Log In</a>
+            <a href="{% url 'signup' %}" class="btn btn-primary">Sign Up</a>
+          </div>
+          {% endif %}        
+        </div>
+      </div>
+    </header>
+
+    <main>
+      {% block content %}
+      {% endblock content %}
+    </main>
+  </div>
+
+  <!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="container my-5">
+
+  <footer class="text-center text-white" style="background-color: #f1f1f1;">
+  <!-- Grid container -->
+  <div class="container pt-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <p class="text-dark">Check out our Facebook page!</p>
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="https://www.facebook.com/socleanAMA/"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 SocleanAmarillo:
+    <a class="text-dark" href="{% url 'home' %}">SocleanAmarillo.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+  
+</div>
+<!-- End of .container -->
+
+  <!-- Bootstrap JavaScript Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
