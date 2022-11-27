@@ -4,23 +4,14 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">Log Out</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">Log In</a> |
-  <a href="{% url 'signup' %}">Sign Up</a>
 
-{% endif %}
 <!-- Container (Portfolio Section) -->
 
 <section class="jumbotron text-center">
   <div class="container">
-    <h1 class="jumbotron-heading">Let us take care of the dirty work.</h1>
-    <p class="lead text-muted">We offer professional window cleaning service for resiential and commercial buildings in the Texas Panhandle. Create account and fill in the form below for more details! We will schedule a time to look at your property and for a free quote.</p>
-    <p>
-      <a href="#" class="btn btn-primary my-2">Main call to action</a>
+    <h1 class="jumbotron-heading">Let us take care of your dirty work.</h1>
+    <p class="lead text-muted">We offer professional window cleaning services for resiential and commercial buildings in the Texas Panhandle. Create an account and fill in the form below for more details! We will schedule a time to look at your property for a free quote.</p>
+      <a href="#" class="btn btn-primary my-2">Get a quote</a>
       <a href="{% url 'signup' %}" class="btn btn-primary">Sign Up</a>
     </p>
   </div>
@@ -28,28 +19,28 @@
 
 
 <div class="container-fluid text-center bg-grey">
-  <h2>Portfolio</h2><br>
-  <h4>What we have cleaned!</h4>
+  <h2>Gallery</h2><br>
+  <!---<h4>What we have cleaned!</h4>-->
   <div class="row text-center">
     <div class="col-sm-4">
       <div class="thumbnail">
         <img src="static/img/residential.png" alt="Resi" width="400" height="300">
         <p><strong>Residential</strong></p>
-        <p>West Texas water is no match for our proven removal techniques. Hard water stain removal will leave your windows looking brand new!</p>
+        <p><strong>West Texas</strong> weather is no match for our proven removal techniques. Hard water stain removal will leave your windows looking brand new!</p>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="thumbnail">
         <img src="static/img/comm.png" alt="Comm" width="400" height="300">
         <p><strong>Commerical</strong></p>
-        <p>Clean windows promote professionalism. Stay focused on the tasks related to your business and leave the dirty work to SoClean. Monthly and quarterly maintenance cleans are the most popular schedules for commerical spaces.</p>
+        <p><strong>Clean windows promote professionalism.</strong> Stay focused on the tasks related to your business and leave the dirty work to Soclean. Monthly and quarterly maintenance cleans are the most popular schedules for commerical spaces.</p>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="thumbnail">
         <img src="static/img/solar.png" alt="Solar" width="400" height="300">
         <p><strong>Solar Pannels</strong></p>
-        <p>Pure water scrubbing rids the panels of bird droppings, tree debris, and anything else. Having clean solor panels will increase your solar efficiency!</p>
+        <p>Pure water scrubbing rids the panels of bird droppings, tree debris, and anything else. Having clean solor panels will increase your solar efficiency and <strong>can lower your electric bill!</strong></p>
       </div>
     </div>
   </div>

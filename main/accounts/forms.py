@@ -1,6 +1,5 @@
 
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-
 from .models import CustomUser
 
 
@@ -10,8 +9,11 @@ class CustomUserCreationForm(UserCreationForm):
         fields = (
             "username",
             "email",
-            "age",
-        )  # new
+            "state",
+            "town",
+            "street",
+            "customer_name",
+        )
 
 
 class CustomUserChangeForm(UserChangeForm):
@@ -20,5 +22,8 @@ class CustomUserChangeForm(UserChangeForm):
         fields = (
             "username",
             "email",
-            "age",
-        )  # new
+            "state",
+            "town",
+            "street",
+            "customer_name",
+        )
