@@ -12,8 +12,4 @@ class CustomUser(AbstractUser):
     street = models.CharField(default="", max_length=50)
     customer_name = models.CharField(default="", max_length=100)
 
-    def __str__(self):
-        return self.customer_name
 
-    def get_absolute_url(self):
-        return reverse("customer_detail", kwargs={"pk": self.pk})

@@ -31,7 +31,8 @@
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center
             mb-md-0">
           {% if user.is_authenticated %}
-            <li><a href="{%url 'customer_detail'%}" class="nav-link px-2 link-dark">Customer history</a></li>
+            <li><a href={%url "review_new"%} class="nav-link px-2 link-dark">Write Review</a></li>
+            <li><a href={%url "review_list"%} class="nav-link px-2 link-dark">Read Reviews</a></li>
           </ul>
           <div class="dropdown text-end">
             <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle"
@@ -92,6 +93,7 @@
   
 </div>
 <!-- End of .container -->
+
 
   <!-- Bootstrap JavaScript Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

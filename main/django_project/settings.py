@@ -31,12 +31,13 @@ SECRET_KEY = environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+SITE_ID = 1
 
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'django.contrib.sites',  # new
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -47,6 +48,8 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',  # new
     "crispy_forms",  # new
     "crispy_bootstrap5",  # new
+    "django_check_seo",  # new
+    "reviews.apps.ReviewsConfig",  # new
 ]
 
 MIDDLEWARE = [
