@@ -10,11 +10,16 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+from environs import Env  # new
 from pathlib import Path
 from dotenv import load_dotenv
 from os import environ
 
 load_dotenv()
+
+
+env = Env()  # new
+env.read_env()  # new
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,9 +33,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool("DEBUG")
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [".herokuapp.com", "localhost", "127.0.0.1"]  # new
 SITE_ID = 1
 
 # Application definition
@@ -42,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    "whitenoise.runserver_nostatic",  # new
     'django.contrib.staticfiles',
     "pages.apps.PagesConfig",  # new
     'soclean.apps.SocleanConfig',  # new
@@ -60,6 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # new
 ]
 
 ROOT_URLCONF = 'django_project.urls'
@@ -87,10 +94,7 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    "default": env.dj_db_url("DATABASE_URL")
 }
 
 
@@ -130,6 +134,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]  # new
+STATICFILES_DIRS = [BASE_DIR / "static"]  # new
+STATIC_ROOT = BASE_DIR / "staticfiles"  # new
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"  # new
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -144,4 +151,10 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"  # new
 CRISPY_TEMPLATE_PACK = "bootstrap5"  # new
 
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"  # new
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"  # new
+DEFAULT_FROM_EMAIL = environ.get('DEFAULT_FROM_EMAIL')  # new
+EMAIL_HOST = "smtp.sendgrid.net"  # new
+EMAIL_HOST_USER = "apikey"  # new
+EMAIL_HOST_PASSWORD = environ.get('SENDGRID_PASSWORD')  # new
+EMAIL_PORT = 587  # new
+EMAIL_USE_TLS = True  # new
