@@ -31,6 +31,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = environ.get('SECRET_KEY')
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51MA1hUGEAXjIhwwyYChJlUBkVfFPL2oBC7KgKm2zLV4mBTtD1Vzpfip1jT3q8ZAlmjMTx0peWMmxcw7ajO0wTBkU00DpjrFohI'
+STRIPE_SECRET_KEY = environ.get('STRIPE_SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG")
@@ -56,6 +59,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",  # new
     "django_check_seo",  # new
     "reviews.apps.ReviewsConfig",  # new
+    'payments.apps.PaymentsConfig',  # new
 ]
 
 MIDDLEWARE = [
