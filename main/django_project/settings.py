@@ -44,6 +44,7 @@ SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',  # new
     'django.contrib.admin',
     'django.contrib.sites',  # new
     'django.contrib.auth',
@@ -60,6 +61,7 @@ INSTALLED_APPS = [
     "django_check_seo",  # new
     "reviews.apps.ReviewsConfig",  # new
     'payments.apps.PaymentsConfig',  # new
+
 ]
 
 MIDDLEWARE = [
