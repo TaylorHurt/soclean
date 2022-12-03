@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {%load static%}
 
-{% block title %}Home{% endblock title %}
+{% block title %}So Clean Amarillo{% endblock title %}
 
 {% block content %}
 
@@ -11,8 +11,10 @@
 
 <section class="jumbotron text-center">
   <div class="container">
-    <h1 class="jumbotron-heading">Let us take care of your dirty work.</h1>
-    <p class="lead text-muted">We offer professional window cleaning services for resiential and commercial buildings in the Texas Panhandle. Create an account and fill in the form below for more details! We will schedule a time to look at your property for a free quote.</p>
+    <h1 class="jumbotron-heading">Amarillo Texas Window Cleaning Services</h1>
+    <h2 class="jumbotron-heading">Let us take care of your dirty work!</h2>
+    <p class="lead text-muted">We offer professional window cleaning services for resiential and commercial buildings in the Texas Panhandle. We can re-screan your windows, fix glass shower doors, and do many other custom projects.</p>
+     <h4 class = "text-primary"> Create an account and visit our Facebook page for more details!</h3>
       <a href="https://www.facebook.com/socleanAMA/" class="btn btn-primary my-2">Facebook</a>
       <a href="{% url 'signup' %}" class="btn btn-primary">Sign Up</a>
     </p>
@@ -26,27 +28,32 @@
   <div class="row text-center">
     <div class="col-sm-4">
       <div class="thumbnail">
-        <img src="static/img/residential.png" alt="Resi" width="400" height="300">
-        <p><strong>Residential</strong></p>
-        <p><strong>West Texas</strong> weather is no match for our proven removal techniques. Hard water stain removal will leave your windows looking brand new!</p>
+        <img src="static/img/residential.png" alt="Home Clean Window" width="400" height="300">
+        <h5><strong>Residential</strong></h5>
+        <p>West Texas weather is no match for our proven removal techniques. Hard water stain removal will leave your windows looking brand new!</p>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="thumbnail">
-        <img src="static/img/comm.png" alt="Comm" width="400" height="300">
-        <p><strong>Commerical</strong></p>
+        <img src="static/img/comm.png" alt="Business Clean Window" width="400" height="300">
+        <h5><strong>Commerical</strong></h5>
         <p><strong>Clean windows promote professionalism.</strong> Stay focused on the tasks related to your business and leave the dirty work to SoClean. Monthly and quarterly maintenance cleans are the most popular schedules for commerical spaces.</p>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="thumbnail">
-        <img src="static/img/solar.png" alt="Solar" width="400" height="300">
-        <p><strong>Solar Pannels</strong></p>
+        <img src="static/img/solar.png" alt="Solar Pannels" width="400" height="300">
+        <h5><strong>Solar Pannels</strong></h5>
         <p>Pure water scrubbing rids the panels of bird droppings, tree debris, and anything else. Having clean solor panels will increase your solar efficiency and <strong>can lower your electric bill!</strong></p>
       </div>
     </div>
   </div>
-</div>
+</div><br><br>
+
+
+<section class="jumbotron text-center">
+<h2 class="display-1"> Call us @ (806) 318-8632</h2> 
+</section>
 
 
 {% endblock content %}

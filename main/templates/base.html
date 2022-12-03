@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
-  <title>{% block title %}Soclean App{% endblock title %}</title>
+  <title>{% block title %}SoCleanAmarillo Texas{% endblock title %}</title>
   <meta name="viewport" content="width=device-width,
   initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
@@ -19,7 +19,7 @@
       <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center
           justify-content-lg-start">
-          <a class="navbar-brand" href="{% url 'home' %}">SoClean</a>
+          <a class="navbar-brand" href="{% url 'home' %}">SoClean Amarillo Texas</a>
           {% if user.is_authenticated %}
             <a class="navbar-brand">Hi {{ user.username }}!</a>
             <a class="navbar-brand" href="{% url 'logout' %}">Log Out</a>
@@ -87,7 +87,8 @@
 
   <!-- Copyright -->
   <div class="text-center text-primary p-3" style="">
-    <a class="text-dark" href="{% url 'home' %}">SocleanAmarillo.com</a>
+    <a class="text-dark" href="{% url 'home' %}">SocleanAmarillo.com</a><br>
+    <a class="text-dark">(806) 318-8632</a>
   </div>
   <!-- Copyright -->
 </footer>
